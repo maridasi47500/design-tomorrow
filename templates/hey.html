@@ -1,18 +1,17 @@
-<style>
-.rond {
-border-radius: 99999px;
-width:100px;
-height:100px;
-border: 1px solid black;
-}
-.carre {
-border: 1px solid black;
-width:100px;
-height:100px;
-}
-</style>
-<div class="rond">
-bienvenue ici</div>
-<div class="carre">
-comment vas tu</div>
+{% extends 'base.html' %}
 
+{% block montitre %}
+debut de mes mots: bienvenue dans next design
+{% endblock %}
+{% block content %}
+<h1># design-tomorrow</h1>
+{% for x in users | reverse %}
+ <li>{{ x["first_name"]  }}</li>
+
+{% endfor %} 
+fin de mes mots : choisis la couleur forme taille des objets, du texte, des images, de tes vetements, etc
+{% endblock %}
+{% block liens %}
+<a href="/">welcome</a>
+{% endblock %}
+<a href="/add_one_textbox"> add one textbox</a><a href="/add_one_image"> add one image</a><a href="/add_one_words"> add one words</a><a href="/add_one_user"> add one user</a><a href="/add_one_country"> add one country</a><a href="/add_one_stuff"> add one stuff</a><a href="/add_one_picturetotext"> add one picturetotext</a><a href="/add_one_texttospeech"> add one texttospeech</a>
